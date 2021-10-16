@@ -1,6 +1,7 @@
 package com.ziqiyuan.blog.service;
 
 import com.ziqiyuan.blog.vo.Result;
+import com.ziqiyuan.blog.vo.params.CommentParam;
 
 public interface CommentsService {
 
@@ -10,4 +11,11 @@ public interface CommentsService {
      * @return
      */
     Result commentsByArticleId(Long id);
+
+    /**
+     * 评论功能
+     * @param commentParam
+     * @return
+     */
+    Result comment(CommentParam commentParam);
 }

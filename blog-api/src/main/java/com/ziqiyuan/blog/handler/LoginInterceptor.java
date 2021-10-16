@@ -39,7 +39,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             // 默认去classpath 下的 static目录去查询
             return true;
         }
-        String token = request.getHeader("Authorization");
+        String token = request.getHeader("Oauth-Token");
         log.info("======================request start ==================");
         String requestURI = request.getRequestURI();
         log.info("request uri:{}",requestURI);
