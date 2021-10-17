@@ -3,6 +3,7 @@ package com.ziqiyuan.blog.controller;
 import com.ziqiyuan.blog.dao.pojo.Article;
 import com.ziqiyuan.blog.service.ArticleService;
 import com.ziqiyuan.blog.vo.Result;
+import com.ziqiyuan.blog.vo.params.ArticleParam;
 import com.ziqiyuan.blog.vo.params.PageParams;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -53,5 +54,13 @@ public class ArticleController {
     public Result findArticleById(@PathVariable("id") Long articleId) {
         return articleService.findArticleById(articleId);
     }
+
+    @PostMapping("publish")
+    public Result publish(@RequestBody ArticleParam articleParam) {
+        System.out.println(articleParam);
+        System.out.println(articleParam.getCategory().toString());
+        return articleService.publish(articleParam);
+    }
+
 
 }
