@@ -15,7 +15,7 @@ public class CommentsController {
     @Autowired
     private CommentsService commentsService;
 
-    ///comments/article/{id}
+    ///comments/article/{id}/
     @GetMapping("article/{id}")
     public Result comments(@PathVariable("id") Long id) {
         return commentsService.commentsByArticleId(id);
