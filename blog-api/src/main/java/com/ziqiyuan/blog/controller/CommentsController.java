@@ -35,10 +35,12 @@ public class CommentsController {
             commentParam.setParent(Long.parseLong((String)commentJson.getJSONObject(
                     "parent").get("id")));
         }
-        if (commentJson.get("toUserId") != null) {
-            commentParam.setToUserId(Long.parseLong((String)commentJson.get(
-                    "toUserId")));
+        if (commentJson.getJSONObject("toUser").get("id") != null) {
+            commentParam.setToUserId(Long.parseLong((String)commentJson.getJSONObject(
+                    "toUser").get("id")));
         }
+        System.out.println(Long.parseLong((String)commentJson.getJSONObject(
+                "toUser").get("id")));
         return commentsService.comment(commentParam);
     }
 }
